@@ -57,11 +57,10 @@ public class SlopeGrass extends BlockStairs {
 		return this.num;
 	}
 	
-	
-	public MapColor getMapColor(IBlockState state) {
+	@Override
+	public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 		return MapColor.GRASS;
 	}
-
 
 	public boolean isFullCube() {
 		return false;
@@ -82,63 +81,4 @@ public class SlopeGrass extends BlockStairs {
 		return state.isTranslucent();
 	}
 	
-	@Mod.EventBusSubscriber(modid = Reference.MODID)
-	 public static class ColorHandler implements IBlockColor, IItemColor
-	  {
-	    public ColorHandler() {}
-	    
-	    public int colorMultiplier(IBlockState state, IBlockAccess access, BlockPos pos, int tintIndex) {
-	      return (access != null) && (pos != null) ? BiomeColorHelper.getGrassColorAtPos(access, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
-	    }
-	    
-
-	    public int colorMultiplier(ItemStack stack, int tintIndex)
-	    {
-	      IBlockState iblockstate = ((ItemBlock)stack.getItem()).getBlock().getStateFromMeta(stack.getMetadata());
-	      return colorMultiplier((IBlockState)null, (IBlockAccess)null, (BlockPos)null, tintIndex);
-	    }
-
-	  }
-	 
-	 /*public class ModColourManager {
-
-			/**
-			 * Register the {@link IBlockColor} handlers.
-			 *
-			 * @param event The event
-			 */
-			/*@SubscribeEvent
-			public void registerBlockColourHandlers(final ColorHandlerEvent.Block event) {
-				final BlockColors blockColors = event.getBlockColors();
-
-				// Use the grass colour of the biome or the default grass colour
-				final IBlockColor grassColourHandler = (state, blockAccess, pos, tintIndex) -> {
-					if (blockAccess != null && pos != null) {
-						return BiomeColorHelper.getGrassColorAtPos(blockAccess, pos);
-					}
-
-					return ColorizerGrass.getGrassColor(0.5D, 1.0D);
-				};
-			}
-
-			/**
-			 * Register the {@link IItemColor} handlers
-			 *
-			 * @param event The event
-			 */
-			/*@SubscribeEvent
-			public void registerItemColourHandlers(final ColorHandlerEvent.Item event) {
-				final BlockColors blockColors = event.getBlockColors();
-				final ItemColors itemColors = event.getItemColors();
-
-				// Use the Block's colour handler for an ItemBlock
-				final IItemColor itemBlockColourHandler = (stack, tintIndex) -> {
-					@SuppressWarnings("deprecation")
-					final IBlockState state = ((ItemBlock) stack.getItem()).getBlock().getStateFromMeta(stack.getMetadata());
-					return blockColors.colorMultiplier(state, null, null, tintIndex);
-				};
-		}
-	 }*/
-	
-
 }
