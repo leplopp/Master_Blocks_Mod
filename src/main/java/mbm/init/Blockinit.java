@@ -42,7 +42,6 @@ public class Blockinit {
 
 public static void init(){
 
-//Stone
 BlockMaker.STONE_SLOPE = new mainSlope("stone_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1 );
 BlockMaker.GRANITE_SLOPE = new mainSlope("granite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
 BlockMaker.SMOOTH_GARNITE_SLOPE = new mainSlope("smooth_granite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
@@ -50,31 +49,23 @@ BlockMaker.DIORITE_SLOPE = new mainSlope("diorite_slope", Blocks.STONE.getDefaul
 BlockMaker.SMOOTH_DIORITE_SLOPE = new mainSlope("smooth_diorite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
 BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
 BlockMaker.SMOOTH_ANDESTITE_SLOPE = new mainSlope("smooth_andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
-//Grass
 BlockMaker.GRASS_SLOPE = new SlopeGrass("grass_slope", Blocks.GRASS.getDefaultState(), Material.GRASS, SoundType.PLANT, 0.6F, "shovel", 0, 0.0F, 0F, 1);
 BlockMaker.FULL_GRASS = new BlockFullGrass("full_grass", Blocks.GRASS.getDefaultState(), Material.GRASS, SoundType.PLANT, 0.6F, "shovel", 0, 0.0F, 0F, 1);
-//Dirt
 BlockMaker.DIRT_SLOPE = new mainSlope("dirt_slope", Blocks.DIRT.getDefaultState(), Material.GROUND, SoundType.GROUND, 0.5F, "shovel", 0, 0.0F, 0F, 1);
 BlockMaker.COARSE_DIRT_SLOPE = new mainSlope("coarse_dirt_slope", Blocks.DIRT.getDefaultState(), Material.GROUND, SoundType.GROUND, 0.5F, "shovel", 0, 0.0F, 0F, 1);
 BlockMaker.PODZOL_SLOPE = new mainSlope("podzol_slope", Blocks.DIRT.getDefaultState(), Material.GROUND, SoundType.GROUND, 0.5F, "shovel", 0, 0.0F, 0F, 1);
 BlockMaker.FULL_PODZOL = new BlockFullPodzol("full_podzol", Blocks.DIRT.getDefaultState(), Material.GROUND, SoundType.GROUND, 0.5F, "shovel", 0, 0.0F, 0F, 1);
-//Cobblestone
 BlockMaker.COBBLESTONE_SLOPE = new mainSlope("cobblestone_slope", Blocks.COBBLESTONE.getDefaultState(), Material.ROCK, SoundType.STONE, 2.0F, "pickaxe", 0, 10.0F, 0F, 1);
-//Planks
 BlockMaker.OAK_PLANKS_SLOPE = new mainSlope("oak_planks_slope", Blocks.PLANKS.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.SPRUCE_PLANKS_SLOPE = new mainSlope("spruce_planks_slope", Blocks.PLANKS.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.BIRCH_PLANKS_SLOPE = new mainSlope("birch_planks_slope", Blocks.PLANKS.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.JUNGLE_PLANKS_SLOPE = new mainSlope("jungle_planks_slope", Blocks.PLANKS.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.ACACIA_PLANKS_SLOPE = new mainSlope("acacia_planks_slope", Blocks.PLANKS.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.DARK_OAK_PLANKS_SLOPE = new mainSlope("dark_oak_planks_slope", Blocks.PLANKS.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
-//Bedrock
 BlockMaker.BEDROCK_SLOPE = new mainSlope("bedrock_slope", Blocks.BEDROCK.getDefaultState(), Material.ROCK, SoundType.STONE, 0.0F, null, 0, 6000000.0F, 0F, 0).setBlockUnbreakable();
-//Sand
 BlockMaker.SAND_SLOPE = new mainSlope("sand_slope", Blocks.SAND.getDefaultState(), Material.SAND, SoundType.SAND, 0.5F, "shovel", 0, 0.0F, 0F, 1);
 BlockMaker.RED_SAND_SLOPE = new mainSlope("red_sand_slope", Blocks.SAND.getDefaultState(), Material.SAND, SoundType.SAND, 0.5F, "shovel", 0, 0.0F, 0F, 1);
-//Gravel
 BlockMaker.GRAVEL_SLOPE = new mainSlope("gravel_slope", Blocks.GRAVEL.getDefaultState(), Material.GROUND, SoundType.GROUND, 0.6F, "shovel", 0, 0.0F, 0F, 1);
-//Ore's 
 BlockMaker.GOLD_ORE_SLOPE = new mainSlope("gold_ore_slope", Blocks.GOLD_ORE.getDefaultState(), Material.ROCK, SoundType.STONE, 3.0F, "pickaxe", 2, 5.0F, 0F, 1);
 BlockMaker.IRON_ORE_SLOPE = new mainSlope("iron_ore_slope", Blocks.IRON_ORE.getDefaultState(), Material.ROCK, SoundType.STONE, 3.0F, "pickaxe", 1, 5.0F, 0F, 1);
 BlockMaker.COAL_ORE_SLOPE = new mainSlope("coal_ore_slope", Blocks.COAL_ORE.getDefaultState(), Material.ROCK, SoundType.STONE, 3.0F, "pickaxe", 0, 5.0F, 0F, 1);
@@ -83,7 +74,6 @@ BlockMaker.DIAMOND_ORE_SLOPE = new mainSlope("diamond_ore_slope", Blocks.DIAMOND
 BlockMaker.REDSTONE_ORE_SLOPE = new mainSlope("redstone_ore_slope", Blocks.REDSTONE_ORE.getDefaultState(), Material.ROCK, SoundType.STONE, 3.0F, "pickaxe", 2, 5.0F, 0F, 1);
 BlockMaker.EMERALD_ORE_SLOPE = new mainSlope("emerald_ore_slope", Blocks.EMERALD_ORE.getDefaultState(), Material.ROCK, SoundType.STONE, 3.0F, "pickaxe", 2, 5.0F, 0F, 1);
 BlockMaker.QUARTZ_ORE_SLOPE = new mainSlope("quartz_ore_slope", Blocks.QUARTZ_ORE.getDefaultState(), Material.ROCK, SoundType.STONE, 3.0F, "pickaxe", 0, 5.0F, 0F, 1);
-//Log
 BlockMaker.OAK_LOG_SLOPE = new mainSlope("oak_log_slope", Blocks.LOG.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.SPRUCE_LOG_SLOPE = new mainSlope("spruce_log_slope", Blocks.LOG.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.BIRCH_LOG_SLOPE = new mainSlope("birch_log_slope", Blocks.LOG.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
