@@ -1,7 +1,7 @@
 {
     "forge_marker": 1,
     "defaults": {
-			"model": "mbm:slope_main",
+			"model": "mbm:grass_slope",
 			"textures": {
 					"particle":	"blocks/dirt",
 					"0": "blocks/grass_top"
@@ -13,7 +13,7 @@
 	},
 	"variants": {
 			"inventory": [{
-						"model": "mbm:slope_main", "y": 180
+						"model": "mbm:grass_slope", "y": 180
 			}],
 			"facing": {
 				"north": {},
@@ -29,8 +29,8 @@
 				"straight":{},
 				"outer_right":{"model":"outer_stairs"},
 				"outer_left":{"model":"outer_stairs"},
-				"inner_right":{"model":"mbm:corner_in_main"},
-				"inner_left":{"model":"mbm:corner_in_main"}
+				"inner_right":{"model":"mbm:grass_corner_in"},
+				"inner_left":{"model":"mbm:grass_corner_in"}
         },    
         "facing=north,half=top,shape=outer_right":  {"y": 0},
         "facing=south,half=top,shape=outer_right": {"y": 180},

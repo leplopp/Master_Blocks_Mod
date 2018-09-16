@@ -58,11 +58,6 @@ public class mbm
 		public ItemStack getTabIconItem() {
 			return new ItemStack(BlockMaker.STONE_SLOPE);
 		}
-		
-		@Override
-		public boolean hasSearchBar() {
-			return true;
-		}
 	};
 }
 
