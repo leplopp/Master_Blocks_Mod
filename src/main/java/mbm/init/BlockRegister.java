@@ -28,15 +28,40 @@ public class BlockRegister {
 		registerBlock(BlockMaker.ANDESITE_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.SMOOTH_ANDESTITE_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.GRASS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.FULL_GRASS,  CreativeTabs.BUILDING_BLOCKS);
+		registerBlock(BlockMaker.DIRT_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.COARSE_DIRT_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.PODZOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.COBBLESTONE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.FULL_PODZOL,  CreativeTabs.BUILDING_BLOCKS);
+		registerBlock(BlockMaker.OAK_PLANKS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SPRUCE_PLANKS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BIRCH_PLANKS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.JUNGLE_PLANKS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.ACACIA_PLANKS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.DARK_OAK_PLANKS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BEDROCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SAND_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.RED_SAND_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GRAVEL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GOLD_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.IRON_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.COAL_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.LAPIS_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.DIAMOND_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.REDSTONE_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.EMERALD_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.QUARTZ_ORE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.OAK_LOG_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SPRUCE_LOG_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BIRCH_LOG_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.JUNGLE_LOG_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.ACACIA_LOG_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.DARK_OAK_LOG_SLOPE,  mbm.tabmbm);
 		
 		
 		
-		
-		
-		
-		
-		
-		registerBlock(BlockMaker.GLASS_SLOPE,  mbm.tabmbm);
+		//registerBlock(BlockMaker.GLASS_SLOPE,  mbm.tabmbm);
 	
 	}
 	
