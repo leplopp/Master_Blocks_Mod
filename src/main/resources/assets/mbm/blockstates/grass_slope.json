@@ -1,7 +1,7 @@
 {
     "forge_marker": 1,
     "defaults": {
-			"model": "mbm:grass_slope",
+			"model": "mbm:slope_main",
 			"textures": {
 					"particle":	"blocks/dirt",
 					"0": "blocks/grass_top"
@@ -13,7 +13,7 @@
 	},
 	"variants": {
 			"inventory": [{
-						"model": "mbm:grass_slope", "y": 180
+						"model": "mbm:slope_main", "y": 180
 			}],
 			"facing": {
 				"north": {},
@@ -27,19 +27,19 @@
 			}, 
 			"shape":{
 				"straight":{},
-				"outer_right":{"model":"outer_stairs"},
-				"outer_left":{"model":"outer_stairs"},
-				"inner_right":{"model":"mbm:grass_corner_in"},
-				"inner_left":{"model":"mbm:grass_corner_in"}
+				"outer_right":{"model":"mbm:corner_out_main"},
+				"outer_left":{"model":"mbm:corner_out_main"},
+				"inner_right":{"model":"mbm:corner_in_main"},
+				"inner_left":{"model":"mbm:corner_in_main"}
         },    
-        "facing=north,half=top,shape=outer_right":  {"y": 0},
-        "facing=south,half=top,shape=outer_right": {"y": 180},
-        "facing=east,half=top,shape=outer_right": {"y": 90},
-		"facing=west,half=top,shape=outer_right": {"y": 270},
-        "facing=north,half=bottom,shape=outer_left":  {"y": 270},
-        "facing=south,half=bottom,shape=outer_left":  {"y": 90},
-        "facing=east,half=bottom,shape=outer_left": {"y": 0},
-        "facing=west,half=bottom,shape=outer_left": {"y": 180},		
+              "facing=north,half=bottom,shape=outer_right":  {"y": 90},
+        "facing=south,half=bottom,shape=outer_right": {"y": 270},
+        "facing=east,half=bottom,shape=outer_right": {"y": 180},
+		"facing=west,half=bottom,shape=outer_right": {"y": 0},
+        "facing=north,half=bottom,shape=outer_left":  {"y": 0},
+        "facing=south,half=bottom,shape=outer_left":  {"y": 180},
+        "facing=east,half=bottom,shape=outer_left": {"y": 90},
+        "facing=west,half=bottom,shape=outer_left": {"y": 270},		
 		"facing=west,half=bottom,shape=inner_right":  {"y": 0},
         "facing=east,half=bottom,shape=inner_right":  {"y": 180},
         "facing=north,half=bottom,shape=inner_right": {"y": 90},
@@ -52,14 +52,14 @@
         "facing=west,half=top,shape=straight": {"x": 180, "y": 90},
         "facing=south,half=top,shape=straight": {"x": 180, "y": 0},
 		"facing=east,half=top,shape=straight": {"x": 180, "y": 270},	
-        "facing=north,half=top,shape=outer_right":  {"x": 180, "y": 90},
-        "facing=south,half=top,shape=outer_right": {"x": 180, "y": 270},
-        "facing=east,half=top,shape=outer_right": {"x": 180, "y": 180},
-		"facing=west,half=top,shape=outer_right": {"x": 180, "y": 0},	
-        "facing=north,half=top,shape=outer_left":  {"x": 180, "y": 0},
-        "facing=south,half=top,shape=outer_left":  {"x": 180, "y": 180},
-        "facing=east,half=top,shape=outer_left": {"x": 180, "y": 90},
-        "facing=west,half=top,shape=outer_left": {"x": 180, "y": 270},
+        "facing=north,half=top,shape=outer_right":  {"x": 180, "y": 180},
+        "facing=south,half=top,shape=outer_right": {"x": 180, "y": 0},
+        "facing=east,half=top,shape=outer_right": {"x": 180, "y": 270},
+		"facing=west,half=top,shape=outer_right": {"x": 180, "y": 90},	
+        "facing=north,half=top,shape=outer_left":  {"x": 180, "y": 90},
+        "facing=south,half=top,shape=outer_left":  {"x": 180, "y": 270},
+        "facing=east,half=top,shape=outer_left": {"x": 180, "y": 180},
+        "facing=west,half=top,shape=outer_left": {"x": 180, "y": 0},
         "facing=west,half=top,shape=inner_right":  {"x": 180, "y": 90},
         "facing=east,half=top,shape=inner_right":  {"x": 180, "y": 270},
         "facing=north,half=top,shape=inner_right": {"x": 180, "y": 180},

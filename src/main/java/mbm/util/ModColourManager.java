@@ -31,6 +31,7 @@ public class ModColourManager {
 			};
 
 			blockColors.registerBlockColorHandler(grassColourHandler, BlockMaker.GRASS_SLOPE);
+			blockColors.registerBlockColorHandler(grassColourHandler,  BlockMaker.FULL_GRASS);
 		}
 
 		@SubscribeEvent
@@ -46,6 +47,7 @@ public class ModColourManager {
 			};
 
 			itemColors.registerItemColorHandler(itemBlockColourHandler,  BlockMaker.GRASS_SLOPE);
+			itemColors.registerItemColorHandler(itemBlockColourHandler,  BlockMaker.FULL_GRASS);
 		}
 	
 }

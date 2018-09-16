@@ -26,7 +26,6 @@ public class mainSlope extends BlockStairs {
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setSoundType(sound);
-		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		setHardness(hardness);
 		setHarvestLevel(tool, level);
 		setResistance(resistance);

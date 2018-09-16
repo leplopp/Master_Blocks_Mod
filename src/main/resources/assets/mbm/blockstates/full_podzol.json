@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+			"model": "cube_all",
+			"textures": {
+					"particle":	"blocks/dirt_podzol_top",
+					"all": "blocks/dirt_podzol_top"
+			}
+
+	},
+	"variants": {
+			"normal": [{}],
+			"inventory": [{}]	
+	}
+}  
