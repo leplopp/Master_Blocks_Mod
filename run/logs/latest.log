@@ -414,3 +414,13 @@ Caused by: java.io.FileNotFoundException: mbm:blockstates/slope.json
 [18:27:44] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 126 advancements
 [18:27:47] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
 [18:27:47] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworld
+[19:01:06] [main/INFO] [net.minecraft.client.Minecraft]: Stopping!
+[19:01:06] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[19:01:06] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[19:01:06] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[19:01:06] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworld
+[19:01:06] [Server thread/INFO] [FML]: Unloading dimension 0
+[19:01:06] [Server thread/INFO] [FML]: Applying holder lookups
+[19:01:06] [Server thread/INFO] [FML]: Holder lookups applied
+[19:01:06] [main/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
+[19:01:06] [main/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com
