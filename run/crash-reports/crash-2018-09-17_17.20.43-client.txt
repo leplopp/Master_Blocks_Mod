@@ -1,0 +1,116 @@
+---- Minecraft Crash Report ----
+// Ouch. That hurt :(
+
+Time: 9/17/18 5:20 PM
+Description: Unexpected error
+
+java.lang.IllegalArgumentException: Cannot get property PropertyBool{name=wet, clazz=class java.lang.Boolean, values=[true, false]} as it does not exist in BlockStateContainer{block=mbm:wet_sponge_slope, properties=[facing, half, shape]}
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.getValue(BlockStateContainer.java:204)
+	at net.minecraft.block.BlockSponge.randomDisplayTick(BlockSponge.java:158)
+	at net.minecraft.block.BlockStairs.randomDisplayTick(BlockStairs.java:303)
+	at net.minecraft.client.multiplayer.WorldClient.showBarrierParticles(WorldClient.java:391)
+	at net.minecraft.client.multiplayer.WorldClient.doVoidFogParticles(WorldClient.java:379)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2019)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1186)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:441)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:25)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.getValue(BlockStateContainer.java:204)
+	at net.minecraft.block.BlockSponge.randomDisplayTick(BlockSponge.java:158)
+	at net.minecraft.block.BlockStairs.randomDisplayTick(BlockStairs.java:303)
+	at net.minecraft.client.multiplayer.WorldClient.showBarrierParticles(WorldClient.java:391)
+	at net.minecraft.client.multiplayer.WorldClient.doVoidFogParticles(WorldClient.java:379)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['leplopp'/55, l='MpServer', x=-1477.28, y=5.77, z=105.44]]
+	Chunk stats: MultiplayerChunkCache: 410, 410
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-1505,4,64), Chunk: (at 15,0,0 in -95,4; contains blocks -1520,0,64 to -1505,255,79), Region: (-3,0; contains chunks -96,0 to -65,31, blocks -1536,0,0 to -1025,255,511)
+	Level time: 1064204 game time, 1353 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 15 total; [EntityHorse['Horse'/8, l='MpServer', x=-1557.21, y=4.00, z=105.15], EntityPlayerSP['leplopp'/55, l='MpServer', x=-1477.28, y=5.77, z=105.44], EntityPig['Pig'/12, l='MpServer', x=-1542.12, y=4.00, z=109.53], EntityCow['Cow'/17, l='MpServer', x=-1494.75, y=4.00, z=29.37], EntityCow['Cow'/18, l='MpServer', x=-1467.20, y=4.00, z=40.33], EntityCow['Cow'/20, l='MpServer', x=-1441.13, y=4.00, z=48.19], EntityHorse['Horse'/21, l='MpServer', x=-1443.52, y=4.00, z=125.01], EntityHorse['Horse'/22, l='MpServer', x=-1448.17, y=4.00, z=149.12], EntityPig['Pig'/24, l='MpServer', x=-1438.40, y=4.00, z=113.31], EntityHorse['Horse'/25, l='MpServer', x=-1426.15, y=4.00, z=155.96], EntityPig['Pig'/26, l='MpServer', x=-1428.22, y=4.00, z=170.31], EntitySheep['Sheep'/27, l='MpServer', x=-1439.18, y=4.00, z=183.80], EntitySheep['Sheep'/28, l='MpServer', x=-1410.72, y=4.00, z=80.18], EntityCow['Cow'/29, l='MpServer', x=-1419.94, y=4.00, z=166.48], EntityCow['Cow'/30, l='MpServer', x=-1400.71, y=4.00, z=29.18]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:461)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2886)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:470)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:25)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_171, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 589438048 bytes (562 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.4.2705 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID        | Version      | Source                           | Signature |
+	|:--------- |:--------- |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp       | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML       | 8.0.99.99    | forgeSrc-1.12.2-14.23.4.2705.jar | None      |
+	| UCHIJAAAA | forge     | 14.23.4.2705 | forgeSrc-1.12.2-14.23.4.2705.jar | None      |
+	| UCHIJAAAA | mbm       | 1.11A        | bin                              | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 399.07' Renderer: 'GeForce GTX 1050/PCIe/SSE2'
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: GeForce GTX 1050/PCIe/SSE2 GL version 4.6.0 NVIDIA 399.07, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 12x AMD Ryzen 5 1600X Six-Core Processor 

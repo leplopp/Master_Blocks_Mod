@@ -33,51 +33,28 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class SlopeGrass extends BlockStairs {
+public class SlopeGrass extends mainSlope {
 	
 	private int num;
 
 	public SlopeGrass(String name, IBlockState modelState, Material materialIn, SoundType sound, float hardness, String tool, int level, float resistance, float lightlevel, int dropnum)  {
-		super(modelState);
-		
-		this.useNeighborBrightness = true;
-		
-		setUnlocalizedName(name);
-		setRegistryName(name);
-		setSoundType(sound);
-		setHardness(hardness);
-		setHarvestLevel(tool, level);
-		setResistance(resistance);
-		setLightLevel(lightlevel);
-		this.num = dropnum; 
+		super(name, modelState, materialIn, sound, lightlevel, tool, dropnum, lightlevel, lightlevel, dropnum);
+
 	}
 
-	public int quantityDropped(Random random) {
-		return this.num;
-	}
-	
 	@Override
 	public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 		return MapColor.GRASS;
-	}
-
-	public boolean isFullCube() {
-		return false;
 	}
 
 	protected boolean canSilkHarvest() {
 
 		return true;
 	}
-	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.CUTOUT_MIPPED;
-	}
-	
-	@Override
-	public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
-		return state.isTranslucent();
 	}
 	
 }

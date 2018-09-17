@@ -58,10 +58,9 @@ public class BlockRegister {
 		registerBlock(BlockMaker.JUNGLE_LOG_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.ACACIA_LOG_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.DARK_OAK_LOG_SLOPE,  mbm.tabmbm);
-		
-		
-		
-		//registerBlock(BlockMaker.GLASS_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SPONGE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.WET_SPONGE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GLASS_SLOPE,  mbm.tabmbm);
 	
 	}
 	

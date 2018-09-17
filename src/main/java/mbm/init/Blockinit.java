@@ -81,12 +81,12 @@ BlockMaker.JUNGLE_LOG_SLOPE = new mainSlope("jungle_log_slope", Blocks.LOG.getDe
 BlockMaker.ACACIA_LOG_SLOPE = new mainSlope("acacia_log_slope", Blocks.LOG2.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 BlockMaker.DARK_OAK_LOG_SLOPE = new mainSlope("dark_oak_log_slope", Blocks.LOG2.getDefaultState(), Material.WOOD, SoundType.WOOD, 2.0F, "axe", 0, 5.0F, 0F, 1);
 //sponge
-/*BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
-BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
+BlockMaker.SPONGE_SLOPE = new mainSlope("sponge_slope", Blocks.STONE.getDefaultState(), Material.SPONGE, SoundType.PLANT, 0.6F, null, 0, 0.0F, 0F, 1);
+BlockMaker.WET_SPONGE_SLOPE= new mainSlope("wet_sponge_slope", Blocks.STONE.getDefaultState(), Material.SPONGE, SoundType.PLANT, 0.6F, null, 0, 0.0F, 0F, 1);
 //Glass
 BlockMaker.GLASS_SLOPE = new mainSlope("glass_slope", Blocks.GLASS.getDefaultState(), Material.GLASS, SoundType.GLASS, 0.3F, null, 0, 0.0F, 0F, 0);
 //Ore Blocks 
-BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
+/*BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
 BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
 BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
 BlockMaker.ANDESITE_SLOPE = new mainSlope("andesite_slope", Blocks.STONE.getDefaultState(), Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0, 10.0F, 0F, 1);
