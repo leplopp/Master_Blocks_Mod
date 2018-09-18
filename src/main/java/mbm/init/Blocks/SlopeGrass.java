@@ -6,6 +6,7 @@ import mbm.Reference;
 import mbm.mbm;
 import mbm.init.BlockMaker;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockGrass;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
@@ -33,7 +34,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class SlopeGrass extends mainSlope {
+public class SlopeGrass extends MainSlope {
 	
 	private int num;
 
@@ -41,6 +42,8 @@ public class SlopeGrass extends mainSlope {
 		super(name, modelState, materialIn, sound, lightlevel, tool, dropnum, lightlevel, lightlevel, dropnum);
 
 	}
+	
+
 
 	@Override
 	public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {

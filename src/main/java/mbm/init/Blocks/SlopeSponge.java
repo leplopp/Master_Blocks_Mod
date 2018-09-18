@@ -17,7 +17,7 @@ import net.minecraft.util.Tuple;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SlopeSponge extends mainSlope{
+public class SlopeSponge extends MainSlope{
 	
 	
 	public SlopeSponge(String name, IBlockState modelState, Material materialIn, SoundType sound, float hardness,

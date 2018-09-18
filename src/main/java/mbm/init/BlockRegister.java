@@ -18,7 +18,9 @@ public class BlockRegister {
 
 	public static void register()
 	{
-
+		registerBlock(BlockMaker.STRUCTURE_BLOCK, CreativeTabs.BUILDING_BLOCKS);
+		
+		registerBlock(BlockMaker.STRUCTURE_SLOPE,  mbm.tabmbm);
 
 		registerBlock(BlockMaker.STONE_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.GRANITE_SLOPE,  mbm.tabmbm);

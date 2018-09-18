@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+			"model": "cube_all",
+			"textures": {
+					"particle":	"mbm:blocks/structure",
+					"all": "mbm:blocks/structure"
+			}
+
+	},
+	"variants": {
+			"normal": [{}],
+			"inventory": [{}]	
+	}
+}  

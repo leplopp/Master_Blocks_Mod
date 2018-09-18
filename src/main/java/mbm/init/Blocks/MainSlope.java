@@ -15,11 +15,11 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class mainSlope extends BlockStairs {
+public class MainSlope extends BlockStairs {
 	
 	private int num;
 
-	public mainSlope(String name, IBlockState modelState, Material materialIn, SoundType sound, float hardness, String tool, int level, float resistance, float lightlevel, int dropnum)  {
+	public MainSlope(String name, IBlockState modelState, Material materialIn, SoundType sound, float hardness, String tool, int level, float resistance, float lightlevel, int dropnum)  {
 		super(modelState);
 		
 		this.useNeighborBrightness = true;

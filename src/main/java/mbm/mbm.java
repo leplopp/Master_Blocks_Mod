@@ -56,7 +56,7 @@ public class mbm
 
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(BlockMaker.STONE_SLOPE) ;
+			return new ItemStack(BlockMaker.STRUCTURE_SLOPE) ;
 		
 		}
 		
