@@ -63,7 +63,34 @@ public class BlockRegister {
 		registerBlock(BlockMaker.SPONGE_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.WET_SPONGE_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.GLASS_SLOPE,  mbm.tabmbm);
-	
+		registerBlock(BlockMaker.LAPIS_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GOLD_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.IRON_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.DIAMOND_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.EMERALD_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.REDSTONE_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.COAL_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SANDSTONE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.CHISELED_SANDSTONE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SMOOTH_SANDSTONE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.WHITE_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.ORANGE_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.MAGENTA_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.LIGHT_BLUE_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.YELLOW_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.LIME_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.PINK_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GRAY_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SILVER_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.CYAN_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.PURPLE_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BLUE_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BROWN_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GREEN_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.RED_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BLACK_WOOL_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BRICK_BLOCK_SLOPE,  mbm.tabmbm);
+		
 	}
 	
 	
