@@ -11,35 +11,43 @@ This mapping 'snapshot_20171003' was designed for MC 1.12! Use at your own peril
 #################################################
 :deobfCompileDummyTask
 :deobfProvidedDummyTask
+:getVersionJson
+:extractUserdev
+Download http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2768/forge-1.12.2-14.23.5.2768.pom
+Download http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2768/forge-1.12.2-14.23.5.2768-userdev.jar
+:extractDependencyATs SKIPPED
+:extractMcpData SKIPPED
+:extractMcpMappings SKIPPED
+:genSrgs SKIPPED
+:downloadClient
+:downloadServer
+:splitServerJar SKIPPED
+:mergeJars SKIPPED
+:deobfMcSRG
+Applying SpecialSource...
+Applying Exceptor...
+:decompileMc
+Download https://repo1.maven.org/maven2/org/jline/jline/3.5.1/jline-3.5.1.pom
+Download https://repo1.maven.org/maven2/org/jline/jline-parent/3.5.1/jline-parent-3.5.1.pom
+Download https://repo1.maven.org/maven2/org/jline/jline/3.5.1/jline-3.5.1.jar
+:fixMcSources
+:applySourcePatches
+:remapMcSources
+:recompileMc
+:extractNatives SKIPPED
+:getAssetIndex UP-TO-DATE
+:getAssets
+Current status: 1302/1305   99%
+:makeStart
+:setupDecompWorkspace
 :eclipseClasspath
+Download https://repo1.maven.org/maven2/org/jline/jline/3.5.1/jline-3.5.1-sources.jar
 :eclipseJdt
 :eclipseProject
-:getVersionJson
-:extractNatives SKIPPED
-:extractUserdev UP-TO-DATE
-:getAssetIndex
-:getAssets
-Current status: 9/1305   0%
-Current status: 9/1305   0%
-Current status: 14/1305   1%
-Current status: 20/1305   1%
-Current status: 22/1305   1%
-Current status: 39/1305   2%
-Current status: 48/1305   3%
-Current status: 50/1305   3%
-Current status: 55/1305   4%
-Current status: 63/1305   4%
-Current status: 71/1305   5%
-Current status: 77/1305   5%
-Current status: 86/1305   6%
-Current status: 1045/1305   80%
-Current status: 1213/1305   92%
-Current status: 1298/1305   99%
-:makeStart
 :makeEclipseCleanRunClient UP-TO-DATE
 :makeEclipseCleanRunServer UP-TO-DATE
 :eclipse
 
 BUILD SUCCESSFUL
 
-Total time: 23.873 secs
+Total time: 4 mins 7.214 secs

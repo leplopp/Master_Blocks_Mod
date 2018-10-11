@@ -1,6 +1,6 @@
 /*
  * Minecraft Forge
- * Copyright (c) 2018.
+ * Copyright (c) 2016-2018.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -16,6 +16,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
+
 package net.minecraftforge.fml.common.discovery.json;
 
 import java.io.InputStream;
@@ -54,6 +55,9 @@ public class JsonAnnotationLoader
             //TODO: Java9 Multi-Release Jars, picking the correct class for the current platform. For now we just ignore them.
             if (entry.getKey().startsWith("META-INF/"))
                 continue;
+            //TODO: Remove in 1.13, some older mods have these in the entries due to FG issue. Basically filter out scala synthetic class.
+            if (entry.getKey().endsWith("$"))
+            	continue;
 
             ASMInfo asm_info = entry.getValue();
             if (asm_info.interfaces != null)

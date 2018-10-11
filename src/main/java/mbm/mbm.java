@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies="after:*", useMetadata = true)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies="after:*")
 public class mbm
 {
 	

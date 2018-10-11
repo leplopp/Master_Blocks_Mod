@@ -98,7 +98,7 @@ public class ActiveRenderInfo
             }
         }
 
-        return iblockstate;
+        return iblockstate.getBlock().getStateAtViewpoint(iblockstate, worldIn, blockpos, vec3d);
     }
 
     public static float getRotationX()

@@ -166,7 +166,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IThre
     private long nanoTimeSinceStatusRefresh;
     public final Queue < FutureTask<? >> futureTaskQueue = Queues. < FutureTask<? >> newArrayDeque();
     private Thread serverThread;
-    private long currentTime = getCurrentTimeMillis();
+    protected long currentTime = getCurrentTimeMillis();
     @SideOnly(Side.CLIENT)
     private boolean worldIconSet;
 
@@ -910,7 +910,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IThre
      */
     public WorldServer getWorld(int dimension)
     {
-        WorldServer ret = net.minecraftforge.common.DimensionManager.getWorld(dimension);
+        WorldServer ret = net.minecraftforge.common.DimensionManager.getWorld(dimension, true);
         if (ret == null)
         {
             net.minecraftforge.common.DimensionManager.initDimension(dimension);

@@ -1,6 +1,6 @@
 /*
  * Minecraft Forge
- * Copyright (c) 2016.
+ * Copyright (c) 2016-2018.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -16,6 +16,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
+
 package net.minecraftforge.fml.common;
 
 import java.io.File;
@@ -36,13 +37,11 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import com.google.common.base.Throwables;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.Mod.Metadata;
-import net.minecraftforge.fml.common.asm.transformers.BlamingTransformer;
 import net.minecraftforge.fml.common.discovery.ASMDataTable;
 import net.minecraftforge.fml.common.discovery.ModCandidate;
 import net.minecraftforge.fml.common.discovery.ASMDataTable.ASMData;
@@ -508,7 +507,6 @@ public class FMLModContainer implements ModContainer
     @Subscribe
     public void constructMod(FMLConstructionEvent event)
     {
-        BlamingTransformer.addClasses(getModId(), candidate.getClassList());
         ModClassLoader modClassLoader = event.getModClassLoader();
         try
         {
@@ -591,7 +589,6 @@ public class FMLModContainer implements ModContainer
         }
         catch (Exception e)
         {
-            Throwables.throwIfUnchecked(e);
             FormattedMessage message = new FormattedMessage("{} Failed to load new mod instance.", getModId());
             throw new LoaderException(message.getFormattedMessage(), e);
         }

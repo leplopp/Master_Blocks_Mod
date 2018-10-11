@@ -18,7 +18,11 @@ public class Language implements Comparable<Language>
         this.name = nameIn;
         this.bidirectional = bidirectionalIn;
         String[] splitLangCode = languageCode.split("_", 2);
-        this.javaLocale = new java.util.Locale(splitLangCode[0], splitLangCode[1]);
+        if (splitLangCode.length == 1) { // Vanilla has some languages without underscores
+            this.javaLocale = new java.util.Locale(languageCode);
+        } else {
+            this.javaLocale = new java.util.Locale(splitLangCode[0], splitLangCode[1]);
+        }
     }
 
     public String getLanguageCode()

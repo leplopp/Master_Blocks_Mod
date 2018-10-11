@@ -16,6 +16,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
+
 package net.minecraftforge.fml.relauncher.libraries;
 
 import java.io.ByteArrayInputStream;
@@ -98,8 +99,11 @@ public class LibraryManager
         for (ModList list : ModList.getKnownLists(minecraftHome))
         {
             Repository repo = list.getRepository() == null ? libraries_dir : list.getRepository();
-            for (Artifact artifact : list.getArtifacts())
+            List<Artifact> artifacts = list.getArtifacts();
+            // extractPacked adds artifacts to the list. As such, we can't use an Iterator to traverse it.
+            for (int i = 0; i < artifacts.size(); i++)
             {
+                Artifact artifact = artifacts.get(i);
                 Artifact resolved = repo.resolve(artifact);
                 if (resolved != null)
                 {

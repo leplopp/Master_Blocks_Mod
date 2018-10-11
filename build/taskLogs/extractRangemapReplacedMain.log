@@ -1,0 +1,53 @@
+Symbol range map extraction starting
+Processing 17 files
+startProcessing "mbm\Reference.java" md5: acd6aeacf9d145872f0af235edbbc482
+endProcessing "mbm\Reference.java"
+
+startProcessing "mbm\handlers\RegistryHandler.java" md5: e168e4df711e90c28105e2b36303e6c4
+endProcessing "mbm\handlers\RegistryHandler.java"
+
+startProcessing "mbm\init\BlockMaker.java" md5: 9a6594cb74a0faab287704922aa3c4d0
+endProcessing "mbm\init\BlockMaker.java"
+
+startProcessing "mbm\init\BlockRegister.java" md5: 557f64e7fbbd2a345b06d88b99655ad7
+endProcessing "mbm\init\BlockRegister.java"
+
+startProcessing "mbm\init\Blockinit.java" md5: 7f0a897ff5fd39afdafde2a91ea83176
+endProcessing "mbm\init\Blockinit.java"
+
+startProcessing "mbm\init\Blocks\BlockFullGrass.java" md5: 9ef6a5c1265fcda35905349ed0649ce7
+endProcessing "mbm\init\Blocks\BlockFullGrass.java"
+
+startProcessing "mbm\init\Blocks\MainBlock.java" md5: eeba69d48ecb41e6f3572533b330af7f
+endProcessing "mbm\init\Blocks\MainBlock.java"
+
+startProcessing "mbm\init\Blocks\MainSlope.java" md5: 4482f8743300d0e730d11e60fed1223a
+endProcessing "mbm\init\Blocks\MainSlope.java"
+
+startProcessing "mbm\init\Blocks\SlopeGrass.java" md5: c359f22e6d61a02412fe18bbc2b5e1bb
+endProcessing "mbm\init\Blocks\SlopeGrass.java"
+
+startProcessing "mbm\init\Blocks\SlopeIce.java" md5: b854ecce3498c925faa71ecae4bc1449
+endProcessing "mbm\init\Blocks\SlopeIce.java"
+
+startProcessing "mbm\init\Blocks\SlopeSponge.java" md5: b322bc09b29d8726001a037eff1da246
+endProcessing "mbm\init\Blocks\SlopeSponge.java"
+
+startProcessing "mbm\init\Blocks\StructureBlock.java" md5: c7804234552d9c004ec9bf6bbf01e12a
+endProcessing "mbm\init\Blocks\StructureBlock.java"
+
+startProcessing "mbm\mbm.java" md5: 9fdacf650f5739cb656a4945b78307d2
+endProcessing "mbm\mbm.java"
+
+startProcessing "mbm\proxy\ClientProxy.java" md5: b8df559c43765e1b0f5694ce3d538e71
+endProcessing "mbm\proxy\ClientProxy.java"
+
+startProcessing "mbm\proxy\CommonProxy.java" md5: 355e5dab998f4380db0e992c7353dc8a
+endProcessing "mbm\proxy\CommonProxy.java"
+
+startProcessing "mbm\util\ModColourManager.java" md5: 843d0a92ee91505a316468ddd01f85a4
+endProcessing "mbm\util\ModColourManager.java"
+
+startProcessing "mbm\util\config.java" md5: b5e8eb9373cddf9a310c55091fa2ee59
+endProcessing "mbm\util\config.java"
+

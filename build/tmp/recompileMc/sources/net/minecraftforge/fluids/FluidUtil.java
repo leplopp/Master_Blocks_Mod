@@ -1,6 +1,6 @@
 /*
  * Minecraft Forge
- * Copyright (c) 2016.
+ * Copyright (c) 2016-2018.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -740,7 +740,7 @@ public class FluidUtil
             }
         }
 
-        if (FluidRegistry.isUniversalBucketEnabled() && FluidRegistry.getBucketFluids().contains(fluid))
+        if (FluidRegistry.isUniversalBucketEnabled() && FluidRegistry.hasBucket(fluid))
         {
             UniversalBucket bucket = ForgeModContainer.getInstance().universalBucket;
             ItemStack filledBucket = new ItemStack(bucket);
