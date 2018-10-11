@@ -90,6 +90,18 @@ public class BlockRegister {
 		registerBlock(BlockMaker.RED_WOOL_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.BLACK_WOOL_SLOPE,  mbm.tabmbm);
 		registerBlock(BlockMaker.BRICK_BLOCK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.BOOKSHELF_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.MOSSY_COBBLESTONE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.OBSIDIAN_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.ICE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.PACKED_ICE_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SNOW_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.CLAY_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.PUMPKIN_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.LIT_PUMPKIN_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.NETHERRACK_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.SOUL_SAND_SLOPE,  mbm.tabmbm);
+		registerBlock(BlockMaker.GLOWSTONE_SLOPE,  mbm.tabmbm);
 		
 	}
 	

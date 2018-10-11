@@ -1,77 +1,196 @@
 buildscript {
     repositories {
+        mavenLocal()
+        maven { url = 'http://files.minecraftforge.net/maven' }
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        mavenCentral()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
     }
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
-//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
+plugins {
+    id 'net.minecrell.licenser' version '0.4'
+}
+apply plugin: 'eclipse'
 
-version = "1.0"
-group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+group = 'net.minecraftforge'
+version = '1.0.0'
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
+project(':mcp') {
+    apply plugin: 'net.minecraftforge.gradle.forgedev.mcp'
+    mcp {
+        config = 'de.oceanlabs.mcp:mcp_config:1.13-2018.09.12.04.11.00@zip'
+        pipeline = 'joined'
+    }
 }
 
-minecraft {
-    version = "1.12.2-14.23.4.2705"
-    runDir = "run"
+project(':clean') {
+    evaluationDependsOn(':mcp')
+    apply plugin: 'eclipse'
+    apply plugin: 'net.minecraftforge.gradle.forgedev.patcher'
+    repositories {
+        mavenCentral()
+    }
+    patcher {
+        parent = project(':mcp')
+        patchedSrc = file('src/main/java')
+        mappings channel: 'snapshot', version: '20180813-1.12'
+        mcVersion = '1.13'
+    }
+    task runclient(type: JavaExec) {
+        doFirst {
+            mkdir 'runclient'
+        }
+        classpath sourceSets.main.runtimeClasspath
+        args = ['--accessToken', '0', '--version', '1.13']
+        main 'net.minecraft.client.main.Main'
+        workingDir 'runclient'
+    }
+}
+
+project(':forge') {
+    evaluationDependsOn(':clean')
+    apply plugin: 'java-library'
+    apply plugin: 'eclipse'
+    apply plugin: 'net.minecraftforge.gradle.forgedev.patcher'
+    apply plugin: 'net.minecrell.licenser'
+    sourceSets {
+        main {
+            java {
+                srcDir "$rootDir/src/main/java"
+            }
+            resources {
+                srcDir "$rootDir/src/main/resources"
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    patcher {
+        parent = project(':clean')
+        patches = file("$rootDir/patches/minecraft")
+        patchedSrc = file('src/main/java')
+        accessTransformer = file("$rootDir/src/main/resources/forge_at.cfg")
+        srgPatches = false
+        clientRun {
+            main = 'net.minecraftforge.fml.LaunchTesting'
+            environment = [
+                target: 'fmldevclient'
+            ]
+            properties = [
+                target: 'fmldevclient',
+                assetDirectory: downloadAssets.output
+            ]
+        }
+        serverRun {
+            main = 'net.minecraftforge.fml.LaunchTesting'
+            environment = [
+                target: 'fmldevserver'
+            ]
+        }
+        mcVersion = '1.13'
+    }
+    applyPatches {
+        canonicalizeAccess true
+        canonicalizeWhitespace true
+        maxFuzz 3
+    }
+    dependencies {
+        api 'net.minecraft:client:1.13:extra'
+        api 'cpw.mods:modlauncher:0.1.0-rc.3' //Pinned until cpw fixes getCommonSupertype
+        api 'net.minecraftforge:accesstransformers:0.10+:shadowed'
+        api 'net.minecraftforge:eventbus:0.1+:service'
+        api 'net.minecraftforge:forgespi:0.1+'
+        api 'net.minecraftforge:coremods:0.1+'
+        api 'com.electronwill.night-config:core:3.4.0'
+        api 'com.electronwill.night-config:toml:3.4.0'
+        api 'org.jline:jline:3.5.1'
+        api 'org.apache.maven:maven-artifact:3.5.3'
+        api 'java3d:vecmath:1.5.2'
+    }
+
+    configurations {
+        ecj
+    }
+
+    dependencies {
+        ecj 'org.eclipse.jdt.core.compiler:ecj:4.6.1'
+    }
+
+    compileJava {
+        options.fork = true
+        options.failOnError = false
+        options.forkOptions.with {
+            executable = 'java'
+            jvmArgs = ['-classpath', project.configurations.ecj.asPath, 'org.eclipse.jdt.internal.compiler.batch.Main', '-nowarn', '-proceedOnError', '-preserveAllLocals', '-parameters']
+        }
+    }
+
+    task runclient(type: JavaExec, dependsOn: [":forge:downloadAssets", ":forge:extractNatives"]) {
+        doFirst {
+            mkdir 'runclient'
+        }
+        doFirst {
+            copy {
+                from sourceSets.main.resources
+                into "$buildDir/classes/java/main"
+            }
+        }
+//        jvmArgs = ['-verbose:class']
+        classpath sourceSets.main.runtimeClasspath
+        main 'net.minecraftforge.fml.LaunchTesting'
+        systemProperties = [
+                "org.lwjgl.util.Debug": "true",
+                "org.lwjgl.util.DebugLoader": "true"
+        ]
+        environment += [
+                target:'fmldevclient',
+                assetDirectory: file("${gradle.getGradleUserHomeDir()}/caches/forge_gradle/assets/"),
+                nativesDirectory: extractNatives.output
+        ]
+        workingDir 'runclient'
+    }
+
+    task runserver(type: JavaExec) {
+        doFirst {
+            mkdir 'runserver'
+        }
+        classpath sourceSets.main.runtimeClasspath
+        main 'net.minecraftforge.fml.LaunchTesting'
+        args 'nogui'
+        environment target:'fmldevserver'
+        workingDir 'runserver'
+    }
     
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20171003"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-}
+    license {
+        header = file("$rootDir/LICENSE-header.txt")
 
-dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+        include 'net/minecraftforge/'
+        exclude 'net/minecraftforge/server/terminalconsole/'
+        exclude 'net/minecraftforge/fml/common/versioning/ComparableVersion.java'
+        exclude 'net/minecraftforge/fml/common/versioning/InvalidVersionSpecificationException.java'
+        exclude 'net/minecraftforge/fml/common/versioning/Restriction.java'
+        exclude 'net/minecraftforge/fml/common/versioning/VersionRange.java'
 
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-}
-
-processResources {
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-        
-    // copy everything else except the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+        tasks {
+            main {
+                files = files("$rootDir/src/main/java")
+            }
+            test {
+                files = files("$rootDir/src/test/java")
+            }
+        }
     }
 }
+
+//evaluationDependsOnChildren()
+task setup() {
+    dependsOn ':clean:extractMapped'
+    dependsOn ':forge:extractMapped' //These must be strings so that we can do lazy resolution. Else we need evaluationDependsOnChildren above
+}
+
+
